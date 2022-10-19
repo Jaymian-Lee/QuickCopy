@@ -4,7 +4,7 @@
 
 <h2>*STILL IN PROGRESS*</h2>
   
-<h3>Robocopy CLI created for easy use of the robocopy command</h3>
+<h3>QuickCopy CLI created for easy use of the robocopy command</h3>
 
 <p>(Currently the only options are to copy files and directory's. The copy options still need to be added to the project)</p>
 
