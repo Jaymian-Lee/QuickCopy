@@ -1,14 +1,14 @@
 <h1>QuickCopy</h1>
-<h3>Easy to use Robocopy CLI</h3>
+
 <h3>Demo version 1.0.0<h3>
 
 <h2>*STILL IN PROGRESS*</h2>
  
-<h3>QuickCopy CLI created for easy use of the <a target="blank" href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy">robocopy</a> command</h3>
+<h3>QuickCopy CLI created for easy use of <a target="blank" href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy">robocopy</a> command</h3>
 
-<p>(Currently the only options are to copy files and directory's. The copy options still need to be added to the project)</p>
+<p>(Currently the only options are to copy files and directories. The copy options still need to be added to the project)</p>
 
-<p>QuickCopy makes it possible to select the desired source and destination directory's or files. Its also possible to select the desired Copy options such as:</p>
+<p>QuickCopy makes it possible to select the desired source and destination directories or files. Its also possible to select the desired Copy options such as:</p>
 
   <pre>Option 	Description
 /s 	Copies subdirectories. This option automatically excludes empty directories.
