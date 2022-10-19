@@ -1,17 +1,21 @@
 # required modules
-import os
 import tkinter as tk
 from tkinter import filedialog
 from subprocess import call
+import pyfiglet
 
-print("\033[1;32m\nWelcome to robocopy+")
+#banner logo QuickCopy
+ascii_banner = pyfiglet.figlet_format("QuickCopy")
+
+#introduction text
+print(ascii_banner)
+print("\033[1;32mWelcome to QuickCopy")
 print("Version 1.0.0 (Demo)")
-print("This program will copy files from one directory to another")
-print("Created by Jaymian-Lee Reinartz  \n")
+print("This program will make robocopy easy to use!")
+print("Created by Jaymian-Lee Reinartz")
+print("Github repository: https://github.com/Jaymian-Lee/robocopyplus \n")
 
-    # D:\\OneDrive\\Bureaublad\\Test1\\fliet.txt
-
-
+#main code
 def robocopyplus():
 
     choice = input("Do you want to copy files or directory's? (F/D) \npress (C) to cancel ").lower()
@@ -29,7 +33,8 @@ def robocopyplus():
 
 
     elif choice == "f":
-            # variables
+        
+        # variables
         source = filedialog.askopenfilename()
         destination = filedialog.askopenfilename()
 
@@ -39,7 +44,7 @@ def robocopyplus():
         call(["robocopy",source, destination,"/D"])
     
     elif choice == "c":
-        print("Thanks for using robocopy+!")
+        print("Thanks for using QuickCopy!")
         input("Press any key to exit")
         exit()
     else:
@@ -48,12 +53,13 @@ def robocopyplus():
 
 robocopyplus()
 
+#restart code
 def restartrobocopy():
     restart = input("Do you want to copy more files? (Y/N) ").lower()
     if restart == "y":
         robocopyplus()
     elif restart == "n":
-        print("Thanks for using robocopy+!")
+        print("Thanks for using QuickCopy!")
         input("Press any key to exit")
         exit()
     else:
