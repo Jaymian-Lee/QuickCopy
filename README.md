@@ -6,6 +6,8 @@
   
 <h3>Robocopy CLI created for easy use of the robocopy command</h3>
 
+<p>(Currently the only options are to copy files and directory's. The copy options still need to be added to the project)</p>
+
 <p>Robocopy+ makes it possible to select the desired source and destination directory's or files. Its also possible to select the desired Copy options such as:</p>
 
   <pre>Option 	Description
