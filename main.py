@@ -15,12 +15,16 @@ print("This program will make robocopy easy to use!")
 print("Created by Jaymian-Lee Reinartz")
 print("Github repository: https://github.com/Jaymian-Lee/quickcopy \n")
 
+
 def optionfunc():
     
-    
+    # placeholder for the options variable
     options = "NOTSET"
-    options_list = []
 
+    global options_list
+    options_list = []
+    
+    # available options
     s = "/s"
     e = "/e"
     z = "/Z"
@@ -28,12 +32,16 @@ def optionfunc():
     zb = "/zb"
     j = "/j"
 
+    # while loop to add options to a options_list
     while options != "":
         options = input("\nWhat copy options do you want to use? Press (H) for all commands! (press enter to continue) ").lower()
         if options == "h":
-            print("     s = /s,  	Copies subdirectories. This option automatically excludes empty " +
-                "directories. \n     e = /e 	Copies subdirectories. This option automatically " +
-                "includes empty directories. \n     z = /z 	Copies files in restartable mode. In restartable mode, should a file copy be interrupted, Robocopy can pick up where it left off rather than recopying the entire file. \n     b = /b, 	Copies files in backup mode. Backup mode allows Robocopy to override file and folder permission settings (ACLs). This allows you to copy files you might otherwise not have access to, assuming it's being run under an account with sufficient privileges. \n     zb = /zb 	Copies files in restartable mode. If file access is denied, switches to backup mode. \n     j = /j 	Copies using unbuffered I/O (recommended for large files).\n")
+            print("     s = /s,  	Copies subdirectories. This option automatically excludes empty directories. \n" +
+            "     e = /e 	Copies subdirectories. This option automatically includes empty directories. \n" +
+            "     z = /z 	Copies files in restartable mode. In restartable mode, should a file copy be interrupted, Robocopy can pick up where it left off rather than recopying the entire file. \n" +
+            "     b = /b, 	Copies files in backup mode. Backup mode allows Robocopy to override file and folder permission settings (ACLs). This allows you to copy files you might otherwise not have access to, assuming it's being run under an account with sufficient privileges. \n" + 
+            "     zb = /zb 	Copies files in restartable mode. If file access is denied, switches to backup mode. \n" + 
+            "     j = /j 	Copies using unbuffered I/O (recommended for large files).\n")
         elif options == "s":
             options_list.append(s)
         elif options == "e":
@@ -47,16 +55,25 @@ def optionfunc():
         elif options == "j":
             options_list.append(j)
 
-
-        
+        # if input of options is equal to c exit the program
+        elif options == "c":
+            print("Thanks for using QuickCopy!")
+            input("Press any key to exit")
+            exit()
 
     print("Selected options: " + str(options_list))
-
-#main code
+    
+# main code
 def quickcopy():
-
+    
     choice = input("Do you want to copy files or directory's? (F/D) \npress (C) to cancel ").lower()
- 
+    
+    # if output of choice is equal to c then exit the program
+    if choice == "c":
+        print("Thanks for using QuickCopy!")
+        input("Press any key to exit")
+        exit()
+
     optionfunc()
 
     if choice == "d":
@@ -68,8 +85,9 @@ def quickcopy():
         print("Source: " + source)
         print("Destination: " + destination)
 
-        call(["robocopy",source, destination,"/E"])
-
+        print(options_list)
+        # robocopy command example (/E)
+        call(["robocopy",source, destination, "/E"])
 
     elif choice == "f":
         
@@ -77,22 +95,22 @@ def quickcopy():
         source = filedialog.askopenfilename()
         destination = filedialog.askopenfilename()
 
+        # print the output of the variables
         print("Source: " + source)
         print("Destination: " + destination)
 
+        # import the options_list variable from the optionfunc function and print the outcome
+
         call(["robocopy",source, destination,"/D"])
     
-    elif choice == "c":
-        print("Thanks for using QuickCopy!")
-        input("Press any key to exit")
-        exit()
     else:
         print("Please enter a valid option")
         quickcopy()
 
+
 quickcopy()
 
-#restart code
+# restart code from the beginning
 def restartquickcopy():
     restart = input("Do you want to copy more files? (Y/N) ").lower()
     if restart == "y":
