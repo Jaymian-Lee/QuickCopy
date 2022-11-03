@@ -1,7 +1,6 @@
 <h1>QuickCopy</h1>
 
 <h3>Demo version 1.0.0<h3>
-![quickcopy](https://user-images.githubusercontent.com/56151997/199839447-a454dd1b-8185-4875-9099-3f70932162fc.png)
 
 <h2>*STILL IN PROGRESS*</h2>
  
